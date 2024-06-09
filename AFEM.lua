@@ -1,4 +1,4 @@
--- AFEM v1.0.0
+-- AFEM v1.0.1
 
 -- Instances:
 
@@ -79,7 +79,7 @@ local Converted = {
 
 Converted["_AFMM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Converted["_AFMM"].Name = "AFMM"
-Converted["_AFMM"].Parent = game:GetService("CoreGui")
+Converted["_AFMM"].Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
 Converted["_Open"].Font = Enum.Font.SourceSans
 Converted["_Open"].Text = ""
@@ -552,10 +552,10 @@ Converted["_UIPadding7"].Parent = Converted["_TextLabel7"]
 local fake_module_scripts = {}
 
 do -- Fake Module: StarterGui.AFMM.DraggableObject
-    local script = Instance.new("ModuleScript")
-    script.Name = "DraggableObject"
-    script.Parent = Converted["_AFMM"]
-    local function module_script()
+	local script = Instance.new("ModuleScript")
+	script.Name = "DraggableObject"
+	script.Parent = Converted["_AFMM"]
+	local function module_script()
 		--[[
 			@Author: Spynaz
 			@Description: Enables dragging on GuiObjects. Supports both mouse and touch.
@@ -563,14 +563,14 @@ do -- Fake Module: StarterGui.AFMM.DraggableObject
 			For instructions on how to use this module, go to this link:
 			https://devforum.roblox.com/t/simple-module-for-creating-draggable-gui-elements/230678
 		--]]
-		
+
 		local UDim2_new = UDim2.new
-		
+
 		local UserInputService = game:GetService("UserInputService")
-		
+
 		local DraggableObject 		= {}
 		DraggableObject.__index 	= DraggableObject
-		
+
 		-- Sets up a new draggable object
 		function DraggableObject.new(Object)
 			local self 			= {}
@@ -579,12 +579,12 @@ do -- Fake Module: StarterGui.AFMM.DraggableObject
 			self.DragEnded		= nil
 			self.Dragged		= nil
 			self.Dragging		= false
-			
+
 			setmetatable(self, DraggableObject)
-			
+
 			return self
 		end
-		
+
 		-- Enables dragging
 		function DraggableObject:Enable()
 			local object			= self.Object
@@ -592,16 +592,16 @@ do -- Fake Module: StarterGui.AFMM.DraggableObject
 			local dragStart			= nil
 			local startPos			= nil
 			local preparingToDrag	= false
-			
+
 			-- Updates the element
 			local function update(input)
 				local delta 		= input.Position - dragStart
 				local newPosition	= UDim2_new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 				object.Position 	= newPosition
-			
+
 				return newPosition
 			end
-			
+
 			self.InputBegan = object.InputBegan:Connect(function(input)
 				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 					preparingToDrag = true
@@ -613,107 +613,107 @@ do -- Fake Module: StarterGui.AFMM.DraggableObject
 					dragStart 		= input.Position
 					startPos 		= Element.Position
 					--]]
-					
+
 					local connection 
 					connection = input.Changed:Connect(function()
 						if input.UserInputState == Enum.UserInputState.End and (self.Dragging or preparingToDrag) then
 							self.Dragging = false
 							connection:Disconnect()
-							
+
 							if self.DragEnded and not preparingToDrag then
 								self.DragEnded()
 							end
-							
+
 							preparingToDrag = false
 						end
 					end)
 				end
 			end)
-			
+
 			self.InputChanged = object.InputChanged:Connect(function(input)
 				if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 					dragInput = input
 				end
 			end)
-			
+
 			self.InputChanged2 = UserInputService.InputChanged:Connect(function(input)
 				if object.Parent == nil then
 					self:Disable()
 					return
 				end
-				
+
 				if preparingToDrag then
 					preparingToDrag = false
-					
+
 					if self.DragStarted then
 						self.DragStarted()
 					end
-					
+
 					self.Dragging	= true
 					dragStart 		= input.Position
 					startPos 		= object.Position
 				end
-				
+
 				if input == dragInput and self.Dragging then
 					local newPosition = update(input)
-					
+
 					if self.Dragged then
 						self.Dragged(newPosition)
 					end
 				end
 			end)
 		end
-		
+
 		-- Disables dragging
 		function DraggableObject:Disable()
 			self.InputBegan:Disconnect()
 			self.InputChanged:Disconnect()
 			self.InputChanged2:Disconnect()
-			
+
 			if self.Dragging then
 				self.Dragging = false
-				
+
 				if self.DragEnded then
 					self.DragEnded()
 				end
 			end
 		end
-		
+
 		return DraggableObject
-		
-    end
-    fake_module_scripts[script] = module_script
+
+	end
+	fake_module_scripts[script] = module_script
 end
 
 -- Fake Local Scripts:
 
 local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Open"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Open"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local draggable = require(script.Parent.Parent.DraggableObject)
-	
+
 	local ts = game:GetService("TweenService")
 	local dragObject = draggable.new(script.Parent)
 	dragObject:Enable()
-	
+
 	local open = false
 	local db = false
-	
+
 	script.Parent.Size = UDim2.fromOffset(0,0)
 	ts:Create(script.Parent, TweenInfo.new(1.2, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
 		Size = UDim2.fromOffset(50,50)
 	}):Play()
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		if db then return end
 		if not open then
@@ -723,7 +723,7 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 				Position = UDim2.fromScale(0.5, -0.38),
 				Size = UDim2.fromScale(8.24, 1.38)
 			}):Play()
-			
+
 			for _, v in ipairs(script.Parent.Frame:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(1.5, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
@@ -738,10 +738,10 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 				Position = UDim2.fromScale(0.5,0),
 				Size = UDim2.fromScale(0,0)
 			})
-			
-			
+
+
 			l:Play()
-			
+
 			for _, v in ipairs(script.Parent.Frame:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(0.8, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -755,7 +755,7 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 			end)
 		end
 	end)
-	
+
 	script.Parent.Toggle.Event:Connect(function()
 		if db then return end
 		if not open then
@@ -765,7 +765,7 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 				Position = UDim2.fromScale(0.5, -0.38),
 				Size = UDim2.fromScale(8.24, 1.38)
 			}):Play()
-	
+
 			for _, v in ipairs(script.Parent.Frame:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(1.5, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
@@ -780,10 +780,10 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 				Position = UDim2.fromScale(0.5,0),
 				Size = UDim2.fromScale(0,0)
 			})
-	
-	
+
+
 			l:Play()
-	
+
 			for _, v in ipairs(script.Parent.Frame:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(0.8, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -799,24 +799,24 @@ local function UQZJ_fake_script() -- Fake Script: StarterGui.AFMM.Open.LocalScri
 	end)
 end
 local function SUEGTZ_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Emote1.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Emote1"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Emote1"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local http = game:GetService("HttpService")
 	local emoteData = {}
 	local emoteSlot = 1
 	local lplayer = game.Players.LocalPlayer
-	
-	if not writefile or readfile or isfile then
+
+	if (not writefile) or (not readfile) or (not isfile) then
 		emoteData = {
 			emote1 = {
 				name = "Godlike",
@@ -831,8 +831,8 @@ local function SUEGTZ_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			writefile("AFMMConf.json", "{}")
 		end
 	end
-	
-	
+
+
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
@@ -855,13 +855,13 @@ local function SUEGTZ_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			end)
 		end)
 	end
-	
+
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
 	local isHeld = false
 	local function onButtonClicked()
 		isHeld = true
-	
+
 		task.spawn(function()
 			task.wait(0.5)
 			if isHeld then
@@ -869,35 +869,35 @@ local function SUEGTZ_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			end
 		end)
 	end
-	
+
 	local function onButtonReleased()
 		isHeld = false
 	end
-	
+
 	-- Connect the button events
 	button.MouseButton1Down:Connect(onButtonClicked)
 	button.MouseButton1Up:Connect(onButtonReleased)
-	
+
 end
 local function AHVVDFI_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Emote2.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Emote2"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Emote2"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local http = game:GetService("HttpService")
 	local emoteData = {}
 	local emoteSlot = 2
 	local lplayer = game.Players.LocalPlayer
-	
-	if not writefile or readfile or isfile then
+
+	if (not writefile) or (not readfile) or (not isfile) then
 		emoteData = {
 			emote1 = {
 				name = "Godlike",
@@ -912,8 +912,8 @@ local function AHVVDFI_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.
 			writefile("AFMMConf.json", "{}")
 		end
 	end
-	
-	
+
+
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
@@ -936,13 +936,13 @@ local function AHVVDFI_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.
 			end)
 		end)
 	end
-	
+
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
 	local isHeld = false
 	local function onButtonClicked()
 		isHeld = true
-	
+
 		task.spawn(function()
 			task.wait(0.5)
 			if isHeld then
@@ -950,35 +950,35 @@ local function AHVVDFI_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.
 			end
 		end)
 	end
-	
+
 	local function onButtonReleased()
 		isHeld = false
 	end
-	
+
 	-- Connect the button events
 	button.MouseButton1Down:Connect(onButtonClicked)
 	button.MouseButton1Up:Connect(onButtonReleased)
-	
+
 end
 local function VCGFF_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Emote3.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Emote3"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Emote3"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local http = game:GetService("HttpService")
 	local emoteData = {}
 	local emoteSlot = 3
 	local lplayer = game.Players.LocalPlayer
-	
-	if not writefile or readfile or isfile then
+
+	if (not writefile) or (not readfile) or (not isfile) then
 		emoteData = {
 			emote1 = {
 				name = "Godlike",
@@ -993,8 +993,8 @@ local function VCGFF_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Em
 			writefile("AFMMConf.json", "{}")
 		end
 	end
-	
-	
+
+
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1017,13 +1017,13 @@ local function VCGFF_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Em
 			end)
 		end)
 	end
-	
+
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
 	local isHeld = false
 	local function onButtonClicked()
 		isHeld = true
-	
+
 		task.spawn(function()
 			task.wait(0.5)
 			if isHeld then
@@ -1031,35 +1031,35 @@ local function VCGFF_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Em
 			end
 		end)
 	end
-	
+
 	local function onButtonReleased()
 		isHeld = false
 	end
-	
+
 	-- Connect the button events
 	button.MouseButton1Down:Connect(onButtonClicked)
 	button.MouseButton1Up:Connect(onButtonReleased)
-	
+
 end
 local function IOURQC_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Emote4.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Emote4"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Emote4"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local http = game:GetService("HttpService")
 	local emoteData = {}
 	local emoteSlot = 4
 	local lplayer = game.Players.LocalPlayer
-	
-	if not writefile or readfile or isfile then
+
+	if (not writefile) or (not readfile) or (not isfile) then
 		emoteData = {
 			emote1 = {
 				name = "Godlike",
@@ -1074,8 +1074,8 @@ local function IOURQC_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			writefile("AFMMConf.json", "{}")
 		end
 	end
-	
-	
+
+
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1098,13 +1098,13 @@ local function IOURQC_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			end)
 		end)
 	end
-	
+
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
 	local isHeld = false
 	local function onButtonClicked()
 		isHeld = true
-	
+
 		task.spawn(function()
 			task.wait(0.5)
 			if isHeld then
@@ -1112,32 +1112,32 @@ local function IOURQC_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 			end
 		end)
 	end
-	
+
 	local function onButtonReleased()
 		isHeld = false
 	end
-	
+
 	-- Connect the button events
 	button.MouseButton1Down:Connect(onButtonClicked)
 	button.MouseButton1Up:Connect(onButtonReleased)
-	
+
 end
 local function UAGPVWP_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Frame"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.Position = UDim2.fromScale(0.5,0)
 	script.Parent.Size = UDim2.fromScale(0,0)
-	
+
 	for _, v in ipairs(script.Parent:GetDescendants()) do
 		if v:IsA("UIStroke") then
 			v.Thickness = 0
@@ -1145,29 +1145,29 @@ local function UAGPVWP_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.
 	end
 end
 local function SLQOFRL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame1"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Frame1"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local http = game:GetService("HttpService")
 	local emoteData = {}
 	local ts = game:GetService("TweenService")
 	local lplayer = game.Players.LocalPlayer
-	
+
 	script.Parent.Position = UDim2.fromScale(-1, 0.032)
-	
+
 	script.Parent.Parent.Open.Edit.Event:Connect(function(slot)
 		script.Parent:SetAttribute("editingSlot", slot)
 		script.Parent.TextLabel.Text = "Editing Emote " .. slot
-		if not writefile or readfile or isfile then
+		if (not writefile) or (not readfile) or (not isfile) then
 			emoteData = {
 				emote1 = {
 					name = "Godlike",
@@ -1182,7 +1182,7 @@ local function SLQOFRL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Local
 				writefile("AFMMConf.json", "{}")
 			end
 		end
-		
+
 		if emoteData['emote' .. slot] then
 			script.Parent.NameInput.TextBox.Text = emoteData['emote' .. slot]['name']
 			script.Parent.AnimationId.TextBox.Text = emoteData['emote' .. slot]['id']
@@ -1194,7 +1194,7 @@ local function SLQOFRL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Local
 			Position = UDim2.fromScale(0.02, 0.032)
 		}):Play()
 	end)
-	
+
 	script.Parent.Save.MouseButton1Click:Connect(function()
 		local slot = script.Parent:GetAttribute("editingSlot")
 		emoteData['emote' .. slot] = {
@@ -1205,24 +1205,24 @@ local function SLQOFRL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Local
 		script.Parent.Parent.Open.Frame:FindFirstChild("Emote" .. slot).Text = script.Parent.NameInput.TextBox.Text
 		ts:Create(script.Parent, TweenInfo.new(1, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
 			Position = UDim2.fromScale(-1, 0.032)
-			}):Play()
+		}):Play()
 	end)
 end
 local function KXIHODL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Animationinspection.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Animationinspection"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_Animationinspection"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local ts = game:GetService("TweenService")
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		ts:Create(script.Parent.Parent.Parent.AnimationInspection, TweenInfo.new(1.3, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
 			Size = UDim2.fromScale(1, 0.6)
@@ -1230,20 +1230,20 @@ local function KXIHODL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Anima
 	end)
 end
 local function CRAS_fake_script() -- Fake Script: StarterGui.AFMM.AnimationInspection.TextButton.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_TextButton"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_TextButton"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local ts = game:GetService("TweenService")
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		ts:Create(script.Parent.Parent, TweenInfo.new(0.7, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
 			Size = UDim2.fromScale(1, 0)
@@ -1251,57 +1251,57 @@ local function CRAS_fake_script() -- Fake Script: StarterGui.AFMM.AnimationInspe
 	end)
 end
 local function AVHENQ_fake_script() -- Fake Script: StarterGui.AFMM.AnimationInspection.Frame.TextLabel.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_TextLabel6"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
+	local script = Instance.new("LocalScript")
+	script.Name = "LocalScript"
+	script.Parent = Converted["_TextLabel6"]
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	-- Variables
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid")
 	local textLabel = script.Parent
-	
+
 	-- Function to update the TextLabel with current animations
 	local function updateAnimationInfo()
 		-- Get all playing AnimationTracks
 		local playingTracks = humanoid:GetPlayingAnimationTracks()
-	
+
 		-- Initialize an empty table to store the animation info
 		local animationInfoList = {}
-	
+
 		-- Loop through each AnimationTrack
 		for _, track in ipairs(playingTracks) do
 			-- Get the Animation object
 			local animation = track.Animation
-	
+
 			-- Get the Animation ID
 			local animationId = animation.AnimationId
-	
+
 			-- Extract the numeric part of the Animation ID
 			local numericAnimationId = string.match(animationId, "%d+")
-	
+
 			-- Try to get the Animation name
 			local animationName = animation.Name or "No Name"
-	
+
 			-- Format the animation info and insert it into the list
 			table.insert(animationInfoList, string.format("%s - %s", animationName, numericAnimationId))
 		end
-	
+
 		-- Join the animation info list into a single string
 		local animationInfoString = table.concat(animationInfoList, "\n")
-	
+
 		-- Update the TextLabel's text
 		textLabel.Text = animationInfoString
 	end
-	
+
 	-- Function to repeatedly update the animation info
 	local function startUpdating()
 		while true do
@@ -1309,10 +1309,10 @@ local function AVHENQ_fake_script() -- Fake Script: StarterGui.AFMM.AnimationIns
 			task.wait(1)  -- Wait for 1 seconds before updating again
 		end
 	end
-	
+
 	-- Start the update loop
 	startUpdating()
-	
+
 end
 
 coroutine.wrap(UQZJ_fake_script)()
