@@ -1,4 +1,4 @@
--- AFEM v1.0.1
+-- AFEM v1.0.2
 
 -- Instances:
 
@@ -836,7 +836,22 @@ local function SUEGTZ_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
-			local atrack = Instance.new("Animation")
+			if (not writefile) or (not readfile) or (not isfile) then
+		emoteData = {
+			emote1 = {
+				name = "Godlike",
+				id = 10714347256
+			}
+		}
+	else
+		if isfile("AFMMConf.json") then
+			emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+		else
+			emoteData = {}
+			writefile("AFMMConf.json", "{}")
+		end
+	end
+		local atrack = Instance.new("Animation")
 			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 			local track
 			local s, r = pcall(function()
@@ -917,7 +932,22 @@ local function AHVVDFI_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
-			local atrack = Instance.new("Animation")
+			if (not writefile) or (not readfile) or (not isfile) then
+				emoteData = {
+					emote1 = {
+						name = "Godlike",
+						id = 10714347256
+					}
+				}
+			else
+				if isfile("AFMMConf.json") then
+					emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+				else
+					emoteData = {}
+					writefile("AFMMConf.json", "{}")
+				end
+			end
+		local atrack = Instance.new("Animation")
 			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 			local track
 			local s, r = pcall(function()
@@ -998,7 +1028,22 @@ local function VCGFF_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.Em
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
-			local atrack = Instance.new("Animation")
+			if (not writefile) or (not readfile) or (not isfile) then
+		emoteData = {
+			emote1 = {
+				name = "Godlike",
+				id = 10714347256
+			}
+		}
+	else
+		if isfile("AFMMConf.json") then
+			emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+		else
+			emoteData = {}
+			writefile("AFMMConf.json", "{}")
+		end
+	end
+		local atrack = Instance.new("Animation")
 			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 			local track
 			local s, r = pcall(function()
@@ -1079,7 +1124,22 @@ local function IOURQC_fake_script() -- Fake Script: StarterGui.AFMM.Open.Frame.E
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
 		script.Parent.MouseButton1Click:Connect(function()
-			local atrack = Instance.new("Animation")
+			if (not writefile) or (not readfile) or (not isfile) then
+		emoteData = {
+			emote1 = {
+				name = "Godlike",
+				id = 10714347256
+			}
+		}
+	else
+		if isfile("AFMMConf.json") then
+			emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+		else
+			emoteData = {}
+			writefile("AFMMConf.json", "{}")
+		end
+	end
+		local atrack = Instance.new("Animation")
 			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 			local track
 			local s, r = pcall(function()
@@ -1184,8 +1244,12 @@ local function SLQOFRL_fake_script() -- Fake Script: StarterGui.AFMM.Frame.Local
 		end
 
 		if emoteData['emote' .. slot] then
-			script.Parent.NameInput.TextBox.Text = emoteData['emote' .. slot]['name']
-			script.Parent.AnimationId.TextBox.Text = emoteData['emote' .. slot]['id']
+			if emoteData['emote' .. slot]['name'] then
+				script.Parent.NameInput.TextBox.Text = emoteData['emote' .. slot]['name']
+			end
+			if emoteData['emote' .. slot]['id'] then
+				script.Parent.AnimationId.TextBox.Text = emoteData['emote' .. slot]['id']
+			end
 		else
 			script.Parent.NameInput.TextBox.Text = ""
 			script.Parent.AnimationId.TextBox.Text = ""
