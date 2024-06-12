@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.2.2
+-- AFEM by Imperial, v1.2.3
 
 -- Instances:
 
@@ -1742,7 +1742,7 @@ end
 
 -- Fake Local Scripts:
 
-local function TRAIFG_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function OMVO_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1820,7 +1820,7 @@ local function TRAIFG_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalS
 			}):Play()
 	end)
 end
-local function JYXE_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function AVSDHA_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1841,7 +1841,7 @@ local function JYXE_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animatio
 		}):Play()
 	end)
 end
-local function UTXCJLY_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function ALGPOAU_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1862,7 +1862,7 @@ local function UTXCJLY_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Emote
 		}):Play()
 	end)
 end
-local function UMFIDW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function KXVX_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1883,7 +1883,7 @@ local function UMFIDW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIns
 		}):Play()
 	end)
 end
-local function TAUCNW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function ZIXSH_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -1947,7 +1947,7 @@ local function TAUCNW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIns
 	startUpdating()
 	
 end
-local function OOUAAU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function GNUF_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -1968,7 +1968,7 @@ local function OOUAAU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalS
 		end
 	end
 end
-local function LEXQB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
+local function RIXF_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote1"]
@@ -2006,28 +2006,30 @@ local function LEXQB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
-		script.Parent.MouseButton1Click:Connect(function()
-			load()
-			local atrack = Instance.new("Animation")
-			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
-			local track
-			local s, r = pcall(function()
-				track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
-				track:Play()
-			end)
-			if not s then
-				warn("Error playing animation: " .. r)
-			else
-				script.Parent.Parent.Parent.Open.Toggle:Fire()
-			end
-			lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
-				if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
-					track:Stop()
-				end
-			end)
-		end)
+		
 	end
 	
+	script.Parent.MouseButton1Click:Connect(function()
+		load()
+		if not emoteData['emote' .. emoteSlot] then return end
+		local atrack = Instance.new("Animation")
+		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
+		local track
+		local s, r = pcall(function()
+			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
+			track:Play()
+		end)
+		if not s then
+			warn("Error playing animation: " .. r)
+		else
+			script.Parent.Parent.Parent.Open.Toggle:Fire()
+		end
+		lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
+			if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
+				track:Stop()
+			end
+		end)
+	end)
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
 	local isHeld = false
@@ -2051,7 +2053,7 @@ local function LEXQB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function UNRK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
+local function MAWDUYI_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote2"]
@@ -2089,27 +2091,30 @@ local function UNRK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.L
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
-		script.Parent.MouseButton1Click:Connect(function()
-			load()
-			local atrack = Instance.new("Animation")
-			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
-			local track
-			local s, r = pcall(function()
-				track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
-				track:Play()
-			end)
-			if not s then
-				warn("Error playing animation: " .. r)
-			else
-				script.Parent.Parent.Parent.Open.Toggle:Fire()
-			end
-			lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
-				if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
-					track:Stop()
-				end
-			end)
-		end)
 	end
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		load()
+		if not emoteData['emote' .. emoteSlot] then return end
+		local atrack = Instance.new("Animation")
+		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
+		local track
+		local s, r = pcall(function()
+			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
+			track:Play()
+		end)
+		if not s then
+			warn("Error playing animation: " .. r)
+		else
+			script.Parent.Parent.Parent.Open.Toggle:Fire()
+		end
+		lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
+			if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
+				track:Stop()
+			end
+		end)
+	end)
+	
 	
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
@@ -2134,7 +2139,7 @@ local function UNRK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function UGEQPUR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
+local function FAXJQHC_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote3"]
@@ -2172,27 +2177,29 @@ local function UGEQPUR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
-		script.Parent.MouseButton1Click:Connect(function()
-			load()
-			local atrack = Instance.new("Animation")
-			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
-			local track
-			local s, r = pcall(function()
-				track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
-				track:Play()
-			end)
-			if not s then
-				warn("Error playing animation: " .. r)
-			else
-				script.Parent.Parent.Parent.Open.Toggle:Fire()
-			end
-			lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
-				if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
-					track:Stop()
-				end
-			end)
-		end)
 	end
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		load()
+		if not emoteData['emote' .. emoteSlot] then return end
+		local atrack = Instance.new("Animation")
+		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
+		local track
+		local s, r = pcall(function()
+			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
+			track:Play()
+		end)
+		if not s then
+			warn("Error playing animation: " .. r)
+		else
+			script.Parent.Parent.Parent.Open.Toggle:Fire()
+		end
+		lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
+			if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
+				track:Stop()
+			end
+		end)
+	end)
 	
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
@@ -2217,7 +2224,7 @@ local function UGEQPUR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function QTRH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
+local function URHJSWK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote4"]
@@ -2255,27 +2262,29 @@ local function QTRH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.L
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
-		script.Parent.MouseButton1Click:Connect(function()
-			load()
-			local atrack = Instance.new("Animation")
-			atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
-			local track
-			local s, r = pcall(function()
-				track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
-				track:Play()
-			end)
-			if not s then
-				warn("Error playing animation: " .. r)
-			else
-				script.Parent.Parent.Parent.Open.Toggle:Fire()
-			end
-			lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
-				if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
-					track:Stop()
-				end
-			end)
-		end)
 	end
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		load()
+		if not emoteData['emote' .. emoteSlot] then return end
+		local atrack = Instance.new("Animation")
+		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
+		local track
+		local s, r = pcall(function()
+			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
+			track:Play()
+		end)
+		if not s then
+			warn("Error playing animation: " .. r)
+		else
+			script.Parent.Parent.Parent.Open.Toggle:Fire()
+		end
+		lplayer.Character.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
+			if (lplayer.Character.Humanoid.MoveDirection.Magnitude) > 0 and track then
+				track:Stop()
+			end
+		end)
+	end)
 	
 	-- holding script part is ai so tht swhy it looks so different lmao
 	local button = script.Parent
@@ -2300,7 +2309,7 @@ local function QTRH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function JFBD_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function WDOM_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2334,7 +2343,7 @@ local function JFBD_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame
 		end)
 	end
 end
-local function VXMOE_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function QYDKZK_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2440,7 +2449,7 @@ local function VXMOE_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFram
 		end
 	end)
 end
-local function IJPJPV_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function JQTTEAV_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2623,16 +2632,16 @@ local function IJPJPV_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 	end
 end
 
-coroutine.wrap(TRAIFG_fake_script)()
-coroutine.wrap(JYXE_fake_script)()
-coroutine.wrap(UTXCJLY_fake_script)()
-coroutine.wrap(UMFIDW_fake_script)()
-coroutine.wrap(TAUCNW_fake_script)()
-coroutine.wrap(OOUAAU_fake_script)()
-coroutine.wrap(LEXQB_fake_script)()
-coroutine.wrap(UNRK_fake_script)()
-coroutine.wrap(UGEQPUR_fake_script)()
-coroutine.wrap(QTRH_fake_script)()
-coroutine.wrap(JFBD_fake_script)()
-coroutine.wrap(VXMOE_fake_script)()
-coroutine.wrap(IJPJPV_fake_script)()
+coroutine.wrap(OMVO_fake_script)()
+coroutine.wrap(AVSDHA_fake_script)()
+coroutine.wrap(ALGPOAU_fake_script)()
+coroutine.wrap(KXVX_fake_script)()
+coroutine.wrap(ZIXSH_fake_script)()
+coroutine.wrap(GNUF_fake_script)()
+coroutine.wrap(RIXF_fake_script)()
+coroutine.wrap(MAWDUYI_fake_script)()
+coroutine.wrap(FAXJQHC_fake_script)()
+coroutine.wrap(URHJSWK_fake_script)()
+coroutine.wrap(WDOM_fake_script)()
+coroutine.wrap(QYDKZK_fake_script)()
+coroutine.wrap(JQTTEAV_fake_script)()
