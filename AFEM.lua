@@ -111,7 +111,7 @@ Converted["_AFEM"].DisplayOrder = 999999999
 Converted["_AFEM"].ResetOnSpawn = false
 Converted["_AFEM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Converted["_AFEM"].Name = "AFEM"
-Converted["_AFEM"].Parent = game.ReplicatedStorage
+Converted["_AFEM"].Parent = game:GetService("CoreGui")
 
 Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(64.00000378489494, 64.00000378489494, 64.00000378489494)
 Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
