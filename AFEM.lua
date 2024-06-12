@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.2.1
+-- AFEM by Imperial, v1.2.2
 
 -- Instances:
 
@@ -1742,7 +1742,7 @@ end
 
 -- Fake Local Scripts:
 
-local function AHXJ_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function TRAIFG_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1765,7 +1765,7 @@ local function AHXJ_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScr
 	script.Parent.Parent.Open.Edit.Event:Connect(function(slot)
 		script.Parent:SetAttribute("editingSlot", slot)
 		script.Parent.TextLabel.Text = "Editing Emote " .. slot
-		if not writefile or readfile or isfile then
+		if not writefile or not readfile or not isfile then
 			emoteData = {
 				emote1 = {
 					name = "Godlike",
@@ -1820,7 +1820,7 @@ local function AHXJ_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScr
 			}):Play()
 	end)
 end
-local function MEYH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function JYXE_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1841,7 +1841,7 @@ local function MEYH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animatio
 		}):Play()
 	end)
 end
-local function RSZX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function UTXCJLY_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1862,7 +1862,7 @@ local function RSZX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteLis
 		}):Play()
 	end)
 end
-local function LSHLL_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function UMFIDW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1883,7 +1883,7 @@ local function LSHLL_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInsp
 		}):Play()
 	end)
 end
-local function CZKB_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function TAUCNW_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -1947,7 +1947,7 @@ local function CZKB_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspe
 	startUpdating()
 	
 end
-local function RDWJRO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function OOUAAU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -1968,7 +1968,7 @@ local function RDWJRO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalS
 		end
 	end
 end
-local function RBLNSDA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
+local function LEXQB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote1"]
@@ -2051,7 +2051,7 @@ local function RBLNSDA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function CTLNM_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
+local function UNRK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote2"]
@@ -2134,7 +2134,7 @@ local function CTLNM_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function PXXO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
+local function UGEQPUR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote3"]
@@ -2217,7 +2217,7 @@ local function PXXO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function XLVPIWH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
+local function QTRH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote4"]
@@ -2236,7 +2236,7 @@ local function XLVPIWH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	local lplayer = game.Players.LocalPlayer
 	
 	function load()
-		if not writefile or readfile or isfile then
+		if not writefile or not readfile or not isfile then
 			emoteData = {
 				emote1 = {
 					name = "Godlike",
@@ -2300,7 +2300,7 @@ local function XLVPIWH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function AXZNPD_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function JFBD_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2334,7 +2334,7 @@ local function AXZNPD_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFra
 		end)
 	end
 end
-local function SQRS_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function VXMOE_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2440,7 +2440,7 @@ local function SQRS_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame
 		end
 	end)
 end
-local function QJHWW_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function IJPJPV_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2623,16 +2623,16 @@ local function QJHWW_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScr
 	end
 end
 
-coroutine.wrap(AHXJ_fake_script)()
-coroutine.wrap(MEYH_fake_script)()
-coroutine.wrap(RSZX_fake_script)()
-coroutine.wrap(LSHLL_fake_script)()
-coroutine.wrap(CZKB_fake_script)()
-coroutine.wrap(RDWJRO_fake_script)()
-coroutine.wrap(RBLNSDA_fake_script)()
-coroutine.wrap(CTLNM_fake_script)()
-coroutine.wrap(PXXO_fake_script)()
-coroutine.wrap(XLVPIWH_fake_script)()
-coroutine.wrap(AXZNPD_fake_script)()
-coroutine.wrap(SQRS_fake_script)()
-coroutine.wrap(QJHWW_fake_script)()
+coroutine.wrap(TRAIFG_fake_script)()
+coroutine.wrap(JYXE_fake_script)()
+coroutine.wrap(UTXCJLY_fake_script)()
+coroutine.wrap(UMFIDW_fake_script)()
+coroutine.wrap(TAUCNW_fake_script)()
+coroutine.wrap(OOUAAU_fake_script)()
+coroutine.wrap(LEXQB_fake_script)()
+coroutine.wrap(UNRK_fake_script)()
+coroutine.wrap(UGEQPUR_fake_script)()
+coroutine.wrap(QTRH_fake_script)()
+coroutine.wrap(JFBD_fake_script)()
+coroutine.wrap(VXMOE_fake_script)()
+coroutine.wrap(IJPJPV_fake_script)()
