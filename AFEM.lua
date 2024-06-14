@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.3.1
+-- AFEM by Imperial, v1.4.0
 
 -- Instances:
 
@@ -56,22 +56,22 @@ local Converted = {
 	["_UIListLayout"] = Instance.new("UIListLayout");
 	["_LocalScript5"] = Instance.new("LocalScript");
 	["_UIPadding5"] = Instance.new("UIPadding");
-	["_Emote1"] = Instance.new("TextButton");
+	["_emote1"] = Instance.new("TextButton");
 	["_UICorner11"] = Instance.new("UICorner");
 	["_UIStroke5"] = Instance.new("UIStroke");
 	["_UIPadding6"] = Instance.new("UIPadding");
 	["_LocalScript6"] = Instance.new("LocalScript");
-	["_Emote2"] = Instance.new("TextButton");
+	["_emote2"] = Instance.new("TextButton");
 	["_UICorner12"] = Instance.new("UICorner");
 	["_UIStroke6"] = Instance.new("UIStroke");
 	["_LocalScript7"] = Instance.new("LocalScript");
 	["_UIPadding7"] = Instance.new("UIPadding");
-	["_Emote3"] = Instance.new("TextButton");
+	["_emote3"] = Instance.new("TextButton");
 	["_UICorner13"] = Instance.new("UICorner");
 	["_UIStroke7"] = Instance.new("UIStroke");
 	["_LocalScript8"] = Instance.new("LocalScript");
 	["_UIPadding8"] = Instance.new("UIPadding");
-	["_Emote4"] = Instance.new("TextButton");
+	["_emote4"] = Instance.new("TextButton");
 	["_UICorner14"] = Instance.new("UICorner");
 	["_UIStroke8"] = Instance.new("UIStroke");
 	["_LocalScript9"] = Instance.new("LocalScript");
@@ -104,6 +104,20 @@ local Converted = {
 	["_Edit"] = Instance.new("BindableEvent");
 	["_ImageLabel1"] = Instance.new("ImageLabel");
 	["_LocalScript13"] = Instance.new("LocalScript");
+	["_LoadSave"] = Instance.new("Frame");
+	["_UICorner21"] = Instance.new("UICorner");
+	["_UIStroke12"] = Instance.new("UIStroke");
+	["_UIPadding12"] = Instance.new("UIPadding");
+	["_Load"] = Instance.new("TextButton");
+	["_UICorner22"] = Instance.new("UICorner");
+	["_UIPadding13"] = Instance.new("UIPadding");
+	["_UIStroke13"] = Instance.new("UIStroke");
+	["_LocalScript14"] = Instance.new("LocalScript");
+	["_Save1"] = Instance.new("TextButton");
+	["_UICorner23"] = Instance.new("UICorner");
+	["_UIPadding14"] = Instance.new("UIPadding");
+	["_UIStroke14"] = Instance.new("UIStroke");
+	["_LocalScript15"] = Instance.new("LocalScript");
 }
 
 -- Properties:
@@ -474,121 +488,121 @@ Converted["_UIListLayout"].Parent = Converted["_Thing"]
 Converted["_UIPadding5"].PaddingBottom = UDim.new(0.300000012, 0)
 Converted["_UIPadding5"].Parent = Converted["_Thing"]
 
-Converted["_Emote1"].Font = Enum.Font.Gotham
-Converted["_Emote1"].Text = "Press and hold to change this slot."
-Converted["_Emote1"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_Emote1"].TextScaled = true
-Converted["_Emote1"].TextSize = 14
-Converted["_Emote1"].TextWrapped = true
-Converted["_Emote1"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
-Converted["_Emote1"].BackgroundTransparency = 0.6000000238418579
-Converted["_Emote1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_Emote1"].BorderSizePixel = 0
-Converted["_Emote1"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
-Converted["_Emote1"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
-Converted["_Emote1"].Name = "Emote1"
-Converted["_Emote1"].Parent = Converted["_Thing"]
+Converted["_emote1"].Font = Enum.Font.Gotham
+Converted["_emote1"].Text = "Press and hold to change this slot."
+Converted["_emote1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_emote1"].TextScaled = true
+Converted["_emote1"].TextSize = 14
+Converted["_emote1"].TextWrapped = true
+Converted["_emote1"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_emote1"].BackgroundTransparency = 0.6000000238418579
+Converted["_emote1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_emote1"].BorderSizePixel = 0
+Converted["_emote1"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
+Converted["_emote1"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
+Converted["_emote1"].Name = "emote1"
+Converted["_emote1"].Parent = Converted["_Thing"]
 
 Converted["_UICorner11"].CornerRadius = UDim.new(1, 0)
-Converted["_UICorner11"].Parent = Converted["_Emote1"]
+Converted["_UICorner11"].Parent = Converted["_emote1"]
 
 Converted["_UIStroke5"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke5"].Color = Color3.fromRGB(255, 255, 255)
 Converted["_UIStroke5"].Thickness = 2.299999952316284
-Converted["_UIStroke5"].Parent = Converted["_Emote1"]
+Converted["_UIStroke5"].Parent = Converted["_emote1"]
 
 Converted["_UIPadding6"].PaddingBottom = UDim.new(0.200000003, 0)
 Converted["_UIPadding6"].PaddingLeft = UDim.new(0.200000003, 0)
 Converted["_UIPadding6"].PaddingRight = UDim.new(0.200000003, 0)
 Converted["_UIPadding6"].PaddingTop = UDim.new(0.200000003, 0)
-Converted["_UIPadding6"].Parent = Converted["_Emote1"]
+Converted["_UIPadding6"].Parent = Converted["_emote1"]
 
-Converted["_Emote2"].Font = Enum.Font.Gotham
-Converted["_Emote2"].Text = "Press and hold to change this slot."
-Converted["_Emote2"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_Emote2"].TextScaled = true
-Converted["_Emote2"].TextSize = 14
-Converted["_Emote2"].TextWrapped = true
-Converted["_Emote2"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
-Converted["_Emote2"].BackgroundTransparency = 0.6000000238418579
-Converted["_Emote2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_Emote2"].BorderSizePixel = 0
-Converted["_Emote2"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
-Converted["_Emote2"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
-Converted["_Emote2"].Name = "Emote2"
-Converted["_Emote2"].Parent = Converted["_Thing"]
+Converted["_emote2"].Font = Enum.Font.Gotham
+Converted["_emote2"].Text = "Press and hold to change this slot."
+Converted["_emote2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_emote2"].TextScaled = true
+Converted["_emote2"].TextSize = 14
+Converted["_emote2"].TextWrapped = true
+Converted["_emote2"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_emote2"].BackgroundTransparency = 0.6000000238418579
+Converted["_emote2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_emote2"].BorderSizePixel = 0
+Converted["_emote2"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
+Converted["_emote2"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
+Converted["_emote2"].Name = "emote2"
+Converted["_emote2"].Parent = Converted["_Thing"]
 
 Converted["_UICorner12"].CornerRadius = UDim.new(1, 0)
-Converted["_UICorner12"].Parent = Converted["_Emote2"]
+Converted["_UICorner12"].Parent = Converted["_emote2"]
 
 Converted["_UIStroke6"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke6"].Color = Color3.fromRGB(255, 255, 255)
 Converted["_UIStroke6"].Thickness = 2.299999952316284
-Converted["_UIStroke6"].Parent = Converted["_Emote2"]
+Converted["_UIStroke6"].Parent = Converted["_emote2"]
 
 Converted["_UIPadding7"].PaddingBottom = UDim.new(0.200000003, 0)
 Converted["_UIPadding7"].PaddingLeft = UDim.new(0.200000003, 0)
 Converted["_UIPadding7"].PaddingRight = UDim.new(0.200000003, 0)
 Converted["_UIPadding7"].PaddingTop = UDim.new(0.200000003, 0)
-Converted["_UIPadding7"].Parent = Converted["_Emote2"]
+Converted["_UIPadding7"].Parent = Converted["_emote2"]
 
-Converted["_Emote3"].Font = Enum.Font.Gotham
-Converted["_Emote3"].Text = "Press and hold to change this slot."
-Converted["_Emote3"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_Emote3"].TextScaled = true
-Converted["_Emote3"].TextSize = 14
-Converted["_Emote3"].TextWrapped = true
-Converted["_Emote3"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
-Converted["_Emote3"].BackgroundTransparency = 0.6000000238418579
-Converted["_Emote3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_Emote3"].BorderSizePixel = 0
-Converted["_Emote3"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
-Converted["_Emote3"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
-Converted["_Emote3"].Name = "Emote3"
-Converted["_Emote3"].Parent = Converted["_Thing"]
+Converted["_emote3"].Font = Enum.Font.Gotham
+Converted["_emote3"].Text = "Press and hold to change this slot."
+Converted["_emote3"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_emote3"].TextScaled = true
+Converted["_emote3"].TextSize = 14
+Converted["_emote3"].TextWrapped = true
+Converted["_emote3"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_emote3"].BackgroundTransparency = 0.6000000238418579
+Converted["_emote3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_emote3"].BorderSizePixel = 0
+Converted["_emote3"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
+Converted["_emote3"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
+Converted["_emote3"].Name = "emote3"
+Converted["_emote3"].Parent = Converted["_Thing"]
 
 Converted["_UICorner13"].CornerRadius = UDim.new(1, 0)
-Converted["_UICorner13"].Parent = Converted["_Emote3"]
+Converted["_UICorner13"].Parent = Converted["_emote3"]
 
 Converted["_UIStroke7"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke7"].Color = Color3.fromRGB(255, 255, 255)
 Converted["_UIStroke7"].Thickness = 2.299999952316284
-Converted["_UIStroke7"].Parent = Converted["_Emote3"]
+Converted["_UIStroke7"].Parent = Converted["_emote3"]
 
 Converted["_UIPadding8"].PaddingBottom = UDim.new(0.200000003, 0)
 Converted["_UIPadding8"].PaddingLeft = UDim.new(0.200000003, 0)
 Converted["_UIPadding8"].PaddingRight = UDim.new(0.200000003, 0)
 Converted["_UIPadding8"].PaddingTop = UDim.new(0.200000003, 0)
-Converted["_UIPadding8"].Parent = Converted["_Emote3"]
+Converted["_UIPadding8"].Parent = Converted["_emote3"]
 
-Converted["_Emote4"].Font = Enum.Font.Gotham
-Converted["_Emote4"].Text = "Press and hold to change this slot."
-Converted["_Emote4"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_Emote4"].TextScaled = true
-Converted["_Emote4"].TextSize = 14
-Converted["_Emote4"].TextWrapped = true
-Converted["_Emote4"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
-Converted["_Emote4"].BackgroundTransparency = 0.6000000238418579
-Converted["_Emote4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_Emote4"].BorderSizePixel = 0
-Converted["_Emote4"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
-Converted["_Emote4"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
-Converted["_Emote4"].Name = "Emote4"
-Converted["_Emote4"].Parent = Converted["_Thing"]
+Converted["_emote4"].Font = Enum.Font.Gotham
+Converted["_emote4"].Text = "Press and hold to change this slot."
+Converted["_emote4"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_emote4"].TextScaled = true
+Converted["_emote4"].TextSize = 14
+Converted["_emote4"].TextWrapped = true
+Converted["_emote4"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_emote4"].BackgroundTransparency = 0.6000000238418579
+Converted["_emote4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_emote4"].BorderSizePixel = 0
+Converted["_emote4"].Position = UDim2.new(0.397993654, 0, 0.137681156, 0)
+Converted["_emote4"].Size = UDim2.new(0.194303945, 0, 0.724637687, 0)
+Converted["_emote4"].Name = "emote4"
+Converted["_emote4"].Parent = Converted["_Thing"]
 
 Converted["_UICorner14"].CornerRadius = UDim.new(1, 0)
-Converted["_UICorner14"].Parent = Converted["_Emote4"]
+Converted["_UICorner14"].Parent = Converted["_emote4"]
 
 Converted["_UIStroke8"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Converted["_UIStroke8"].Color = Color3.fromRGB(255, 255, 255)
 Converted["_UIStroke8"].Thickness = 2.299999952316284
-Converted["_UIStroke8"].Parent = Converted["_Emote4"]
+Converted["_UIStroke8"].Parent = Converted["_emote4"]
 
 Converted["_UIPadding9"].PaddingBottom = UDim.new(0.200000003, 0)
 Converted["_UIPadding9"].PaddingLeft = UDim.new(0.200000003, 0)
 Converted["_UIPadding9"].PaddingRight = UDim.new(0.200000003, 0)
 Converted["_UIPadding9"].PaddingTop = UDim.new(0.200000003, 0)
-Converted["_UIPadding9"].Parent = Converted["_Emote4"]
+Converted["_UIPadding9"].Parent = Converted["_emote4"]
 
 Converted["_EmoteListFrame"].AnchorPoint = Vector2.new(1, 0)
 Converted["_EmoteListFrame"].BackgroundColor3 = Color3.fromRGB(63.00000384449959, 63.00000384449959, 63.00000384449959)
@@ -766,6 +780,87 @@ Converted["_ImageLabel1"].BorderSizePixel = 0
 Converted["_ImageLabel1"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_ImageLabel1"].Size = UDim2.new(0.699999988, 0, 0.699999988, 0)
 Converted["_ImageLabel1"].Parent = Converted["_Open"]
+
+Converted["_LoadSave"].AnchorPoint = Vector2.new(1, 0)
+Converted["_LoadSave"].BackgroundColor3 = Color3.fromRGB(64.00000378489494, 64.00000378489494, 64.00000378489494)
+Converted["_LoadSave"].BackgroundTransparency = 0.550000011920929
+Converted["_LoadSave"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_LoadSave"].BorderSizePixel = 0
+Converted["_LoadSave"].Position = UDim2.new(1.05105853, 0, 0.0684615523, 0)
+Converted["_LoadSave"].Name = "LoadSave"
+Converted["_LoadSave"].Parent = Converted["_AFEM"]
+
+Converted["_UICorner21"].CornerRadius = UDim.new(0, 20)
+Converted["_UICorner21"].Parent = Converted["_LoadSave"]
+
+Converted["_UIStroke12"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke12"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke12"].Thickness = 2.299999952316284
+Converted["_UIStroke12"].Parent = Converted["_LoadSave"]
+
+Converted["_UIPadding12"].PaddingBottom = UDim.new(0.200000003, 0)
+Converted["_UIPadding12"].PaddingLeft = UDim.new(0.200000003, 0)
+Converted["_UIPadding12"].PaddingRight = UDim.new(0.200000003, 0)
+Converted["_UIPadding12"].PaddingTop = UDim.new(0.200000003, 0)
+Converted["_UIPadding12"].Parent = Converted["_LoadSave"]
+
+Converted["_Load"].Font = Enum.Font.Unknown
+Converted["_Load"].Text = "Load previous save"
+Converted["_Load"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Load"].TextScaled = true
+Converted["_Load"].TextSize = 14
+Converted["_Load"].TextWrapped = true
+Converted["_Load"].BackgroundColor3 = Color3.fromRGB(64.00000378489494, 64.00000378489494, 64.00000378489494)
+Converted["_Load"].BackgroundTransparency = 0.550000011920929
+Converted["_Load"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Load"].BorderSizePixel = 0
+Converted["_Load"].Position = UDim2.new(-0.153421283, 0, -0.123076677, 0)
+Converted["_Load"].Size = UDim2.new(1.03660095, 0, 0.594623804, 0)
+Converted["_Load"].Name = "Load"
+Converted["_Load"].Parent = Converted["_LoadSave"]
+
+Converted["_UICorner22"].CornerRadius = UDim.new(0, 20)
+Converted["_UICorner22"].Parent = Converted["_Load"]
+
+Converted["_UIPadding13"].PaddingBottom = UDim.new(0.200000003, 0)
+Converted["_UIPadding13"].PaddingLeft = UDim.new(0.200000003, 0)
+Converted["_UIPadding13"].PaddingRight = UDim.new(0.200000003, 0)
+Converted["_UIPadding13"].PaddingTop = UDim.new(0.200000003, 0)
+Converted["_UIPadding13"].Parent = Converted["_Load"]
+
+Converted["_UIStroke13"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke13"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke13"].Thickness = 2.299999952316284
+Converted["_UIStroke13"].Parent = Converted["_Load"]
+
+Converted["_Save1"].Font = Enum.Font.Unknown
+Converted["_Save1"].Text = "Save slots"
+Converted["_Save1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Save1"].TextScaled = true
+Converted["_Save1"].TextSize = 14
+Converted["_Save1"].TextWrapped = true
+Converted["_Save1"].BackgroundColor3 = Color3.fromRGB(64.00000378489494, 64.00000378489494, 64.00000378489494)
+Converted["_Save1"].BackgroundTransparency = 0.550000011920929
+Converted["_Save1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Save1"].BorderSizePixel = 0
+Converted["_Save1"].Position = UDim2.new(-0.153421283, 0, 0.58874923, 0)
+Converted["_Save1"].Size = UDim2.new(1.03631473, 0, 0.594754934, 0)
+Converted["_Save1"].Name = "Save"
+Converted["_Save1"].Parent = Converted["_LoadSave"]
+
+Converted["_UICorner23"].CornerRadius = UDim.new(0, 20)
+Converted["_UICorner23"].Parent = Converted["_Save1"]
+
+Converted["_UIPadding14"].PaddingBottom = UDim.new(0.200000003, 0)
+Converted["_UIPadding14"].PaddingLeft = UDim.new(0.200000003, 0)
+Converted["_UIPadding14"].PaddingRight = UDim.new(0.200000003, 0)
+Converted["_UIPadding14"].PaddingTop = UDim.new(0.200000003, 0)
+Converted["_UIPadding14"].Parent = Converted["_Save1"]
+
+Converted["_UIStroke14"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke14"].Color = Color3.fromRGB(0, 255, 0)
+Converted["_UIStroke14"].Thickness = 2.299999952316284
+Converted["_UIStroke14"].Parent = Converted["_Save1"]
 
 -- Fake Module Scripts:
 
@@ -1743,7 +1838,7 @@ end
 
 -- Fake Local Scripts:
 
-local function LPGSIRP_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function XUKXW_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1761,35 +1856,20 @@ local function LPGSIRP_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Local
 	local ts = game:GetService("TweenService")
 	local lplayer = game.Players.LocalPlayer
 	
-	writefile = writefile and writefile or nil
-	readfile = readfile and readfile or nil
-	isfile = isfile and isfile or nil
+	writefile = function(a)
+		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+	end
+	
+	readfile = function(a)
+		return _G.AFEM:GetAttribute("fakefile")
+	end
+	
+	isfile = function()
+		return true
+	end
 	
 	function load()
-		if not writefile or not readfile or not isfile then
-	
-			writefile = function(a)
-				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
-			end
-	
-			readfile = function(a)
-				return _G.AFEM:GetAttribute("fakefile")
-			end
-	
-			isfile = function()
-				return true
-			end
-	
-			emoteData = http:JSONDecode(readfile())
-		else
-			local s, r = pcall(function()
-				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-			end)
-			if not s then
-				emoteData = {}
-				writefile("AFMMConf.json", "{}")
-			end
-		end
+		emoteData = http:JSONDecode(readfile())
 	end
 	
 	
@@ -1839,7 +1919,7 @@ local function LPGSIRP_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Local
 			}):Play()
 	end)
 end
-local function TBBFH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function SWKXMG_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1860,7 +1940,7 @@ local function TBBFH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animati
 		}):Play()
 	end)
 end
-local function OVWDH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function INPX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1881,7 +1961,7 @@ local function OVWDH_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteLi
 		}):Play()
 	end)
 end
-local function MKCAIN_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function HMCNO_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1902,7 +1982,7 @@ local function MKCAIN_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIns
 		}):Play()
 	end)
 end
-local function APRQ_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function MYPEZRZ_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -1966,7 +2046,7 @@ local function APRQ_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspe
 	startUpdating()
 	
 end
-local function NARDG_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function ETDEGZ_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -1987,10 +2067,10 @@ local function NARDG_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalSc
 		end
 	end
 end
-local function WMOWX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
+local function SXDR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
-    script.Parent = Converted["_Emote1"]
+    script.Parent = Converted["_emote1"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2004,36 +2084,23 @@ local function WMOWX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.
 	local emoteData = {}
 	local emoteSlot = 1
 	local lplayer = game.Players.LocalPlayer
-	writefile = writefile and writefile or nil
-	readfile = readfile and readfile or nil
-	isfile = isfile and isfile or nil
+	writefile = function(a)
+		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+	end
+	
+	readfile = function(a)
+		return _G.AFEM:GetAttribute("fakefile")
+	end
+	
+	isfile = function()
+		return true
+	end
 	
 	function load()
-		if not writefile or not readfile or not isfile then
-	
-			writefile = function(a)
-				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
-			end
-	
-			readfile = function(a)
-				return _G.AFEM:GetAttribute("fakefile")
-			end
-	
-			isfile = function()
-				return true
-			end
-	
-			emoteData = http:JSONDecode(readfile())
-		else
-			local s, r = pcall(function()
-				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-			end)
-			if not s then
-				emoteData = {}
-				writefile("AFMMConf.json", "{}")
-			end
-		end
+		emoteData = http:JSONDecode(readfile())
 	end
+	
+	
 	
 	
 	if emoteData['emote' .. emoteSlot] then
@@ -2088,10 +2155,10 @@ local function WMOWX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function TEHHZH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
+local function ZDNFG_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
-    script.Parent = Converted["_Emote2"]
+    script.Parent = Converted["_emote2"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2106,36 +2173,23 @@ local function TEHHZH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2
 	local emoteSlot = 2
 	local lplayer = game.Players.LocalPlayer
 	
-	writefile = writefile and writefile or nil
-	readfile = readfile and readfile or nil
-	isfile = isfile and isfile or nil
+	writefile = function(a)
+		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+	end
+	
+	readfile = function(a)
+		return _G.AFEM:GetAttribute("fakefile")
+	end
+	
+	isfile = function()
+		return true
+	end
 	
 	function load()
-		if not writefile or not readfile or not isfile then
-	
-			writefile = function(a)
-				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
-			end
-	
-			readfile = function(a)
-				return _G.AFEM:GetAttribute("fakefile")
-			end
-	
-			isfile = function()
-				return true
-			end
-	
-			emoteData = http:JSONDecode(readfile())
-		else
-			local s, r = pcall(function()
-				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-			end)
-			if not s then
-				emoteData = {}
-				writefile("AFMMConf.json", "{}")
-			end
-		end
+		emoteData = http:JSONDecode(readfile())
 	end
+	
+	
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2189,10 +2243,10 @@ local function TEHHZH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function VMEVS_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
+local function QHUHKUS_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
-    script.Parent = Converted["_Emote3"]
+    script.Parent = Converted["_emote3"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2208,36 +2262,23 @@ local function VMEVS_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.
 	local lplayer = game.Players.LocalPlayer
 	
 	
-	writefile = writefile and writefile or nil
-	readfile = readfile and readfile or nil
-	isfile = isfile and isfile or nil
+	writefile = function(a)
+		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+	end
+	
+	readfile = function(a)
+		return _G.AFEM:GetAttribute("fakefile")
+	end
+	
+	isfile = function()
+		return true
+	end
 	
 	function load()
-		if not writefile or not readfile or not isfile then
-	
-			writefile = function(a)
-				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
-			end
-	
-			readfile = function(a)
-				return _G.AFEM:GetAttribute("fakefile")
-			end
-	
-			isfile = function()
-				return true
-			end
-	
-			emoteData = http:JSONDecode(readfile())
-		else
-			local s, r = pcall(function()
-				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-			end)
-			if not s then
-				emoteData = {}
-				writefile("AFMMConf.json", "{}")
-			end
-		end
+		emoteData = http:JSONDecode(readfile())
 	end
+	
+	
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2290,10 +2331,10 @@ local function VMEVS_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function QYJSM_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
+local function ZGNGREX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
-    script.Parent = Converted["_Emote4"]
+    script.Parent = Converted["_emote4"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2309,36 +2350,23 @@ local function QYJSM_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.
 	local lplayer = game.Players.LocalPlayer
 	
 	
-	writefile = writefile and writefile or nil
-	readfile = readfile and readfile or nil
-	isfile = isfile and isfile or nil
+	writefile = function(a)
+		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+	end
+	
+	readfile = function(a)
+		return _G.AFEM:GetAttribute("fakefile")
+	end
+	
+	isfile = function()
+		return true
+	end
 	
 	function load()
-		if not writefile or not readfile or not isfile then
-	
-			writefile = function(a)
-				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
-			end
-	
-			readfile = function(a)
-				return _G.AFEM:GetAttribute("fakefile")
-			end
-	
-			isfile = function()
-				return true
-			end
-	
-			emoteData = http:JSONDecode(readfile())
-		else
-			local s, r = pcall(function()
-				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-			end)
-			if not s then
-				emoteData = {}
-				writefile("AFMMConf.json", "{}")
-			end
-		end
+		emoteData = http:JSONDecode(readfile())
 	end
+	
+	
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2391,7 +2419,7 @@ local function QYJSM_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function XNDR_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function VFTARSL_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2425,7 +2453,7 @@ local function XNDR_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame
 		end)
 	end
 end
-local function LTTWJOK_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function EXUHVRQ_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2531,7 +2559,7 @@ local function LTTWJOK_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFr
 		end
 	end)
 end
-local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function NDSNW_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2568,6 +2596,10 @@ local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 				Size = UDim2.new(0, 500, 0.6, 0)
 			}):Play()
 			
+			ts:Create(script.Parent.Parent.LoadSave, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 214, 0, 78)
+			}):Play()
+			
 			for _, v in ipairs(script.Parent.Parent.Thing:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -2582,6 +2614,10 @@ local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 				Position = UDim2.fromScale(0.5,1.2),
 				Size = UDim2.new(0, 500, 0, 0)
 			})
+			
+			ts:Create(script.Parent.Parent.LoadSave, TweenInfo.new(0.2, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 0, 0, 0)
+			}):Play()
 			
 			
 			l:Play()
@@ -2610,6 +2646,10 @@ local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 				Size = UDim2.new(0, 500, 0.6, 0)
 			}):Play()
 	
+			ts:Create(script.Parent.Parent.LoadSave, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 214, 0, 78)
+			}):Play()
+	
 			for _, v in ipairs(script.Parent.Parent.Thing:GetDescendants()) do
 				if v:IsA("UIStroke") then
 					ts:Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -2624,6 +2664,10 @@ local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 				Position = UDim2.fromScale(0.5,1.2),
 				Size = UDim2.new(0, 500, 0, 0)
 			})
+	
+			ts:Create(script.Parent.Parent.LoadSave, TweenInfo.new(0.2, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 0, 0, 0)
+			}):Play()
 	
 	
 			l:Play()
@@ -2713,7 +2757,7 @@ local function MAWVLP_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 	
 	end
 end
-local function JFXC_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
+local function BPDBS_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_AFEM"]
@@ -2731,18 +2775,84 @@ local function JFXC_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
 	end
 	_G.AFEM = script.Parent
 end
+local function MYZQ_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_Load"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
 
-coroutine.wrap(LPGSIRP_fake_script)()
-coroutine.wrap(TBBFH_fake_script)()
-coroutine.wrap(OVWDH_fake_script)()
-coroutine.wrap(MKCAIN_fake_script)()
-coroutine.wrap(APRQ_fake_script)()
-coroutine.wrap(NARDG_fake_script)()
-coroutine.wrap(WMOWX_fake_script)()
-coroutine.wrap(TEHHZH_fake_script)()
-coroutine.wrap(VMEVS_fake_script)()
-coroutine.wrap(QYJSM_fake_script)()
-coroutine.wrap(XNDR_fake_script)()
-coroutine.wrap(LTTWJOK_fake_script)()
-coroutine.wrap(MAWVLP_fake_script)()
-coroutine.wrap(JFXC_fake_script)()
+	local ts = game:GetService("TweenService")
+	local http = game:GetService("HttpService")
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.UIStroke.Thickness = 4.6
+		ts:Create(script.Parent.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+			Thickness = 2.3	
+		}):Play()
+		game.StarterGui:SetCore("SendNotification",{
+			Title = "AFEM - Loaded";
+			Text = "Emotes from last save loaded";
+			Duration = 2;
+		})
+		
+		_G.AFEM:SetAttribute("fakefile", readfile("AFMMConf.json"))
+		local emoteData = http:JSONDecode(_G.AFEM:GetAttribute("fakefile"))
+		for _, button in ipairs( _G.AFEM.Thing:GetChildren()) do
+			if button:IsA("TextButton") then
+				button.Text = emoteData[button.Name]
+			end
+		end
+	end)
+end
+local function RHWQNK_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_Save1"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local ts = game:GetService("TweenService")
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.UIStroke.Thickness = 4.6
+		ts:Create(script.Parent.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+			Thickness = 2.3	
+		}):Play()
+		game.StarterGui:SetCore("SendNotification",{
+			Title = "AFEM - Saved";
+			Text = "Slots has been saved for future use";
+			Duration = 2;
+		})
+		writefile("AFMMConf.json", _G.AFEM:GetAttribute("fakefile"))
+	end)
+end
+
+coroutine.wrap(XUKXW_fake_script)()
+coroutine.wrap(SWKXMG_fake_script)()
+coroutine.wrap(INPX_fake_script)()
+coroutine.wrap(HMCNO_fake_script)()
+coroutine.wrap(MYPEZRZ_fake_script)()
+coroutine.wrap(ETDEGZ_fake_script)()
+coroutine.wrap(SXDR_fake_script)()
+coroutine.wrap(ZDNFG_fake_script)()
+coroutine.wrap(QHUHKUS_fake_script)()
+coroutine.wrap(ZGNGREX_fake_script)()
+coroutine.wrap(VFTARSL_fake_script)()
+coroutine.wrap(EXUHVRQ_fake_script)()
+coroutine.wrap(NDSNW_fake_script)()
+coroutine.wrap(BPDBS_fake_script)()
+coroutine.wrap(MYZQ_fake_script)()
+coroutine.wrap(RHWQNK_fake_script)()
