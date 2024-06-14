@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.4.3
+-- AFEM by Imperial, v1.4.4
 
 -- Instances:
 
@@ -1839,7 +1839,7 @@ end
 
 -- Fake Local Scripts:
 
-local function KIGJO_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function KGGSJXM_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1920,7 +1920,7 @@ local function KIGJO_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalSc
 			}):Play()
 	end)
 end
-local function USIHD_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function VQJRY_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1941,7 +1941,7 @@ local function USIHD_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animati
 		}):Play()
 	end)
 end
-local function EPLOTV_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function GTKHOSI_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1962,7 +1962,7 @@ local function EPLOTV_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteL
 		}):Play()
 	end)
 end
-local function DRFPSN_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function XKLVFUC_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1983,7 +1983,7 @@ local function DRFPSN_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIns
 		}):Play()
 	end)
 end
-local function BLTP_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function XIWZT_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -2047,7 +2047,7 @@ local function BLTP_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspe
 	startUpdating()
 	
 end
-local function XKYIX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function CBHR_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -2068,7 +2068,7 @@ local function XKYIX_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalSc
 		end
 	end
 end
-local function NNXELVK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote1.LocalScript
+local function XWDJK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote1"]
@@ -2154,7 +2154,7 @@ local function NNXELVK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function AWZVOAP_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2.LocalScript
+local function XXAAOIW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote2"]
@@ -2241,7 +2241,7 @@ local function AWZVOAP_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function QOMU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.LocalScript
+local function JSZA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote3"]
@@ -2327,7 +2327,7 @@ local function QOMU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function CAYA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.LocalScript
+local function YNGOZB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote4"]
@@ -2419,7 +2419,7 @@ local function CAYA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function VWIDI_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function PBWTCM_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2453,7 +2453,7 @@ local function VWIDI_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFram
 		end)
 	end
 end
-local function CJMK_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function SPBAQ_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2559,7 +2559,7 @@ local function CJMK_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame
 		end
 	end)
 end
-local function RCBJQOG_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function FYWNPV_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2757,7 +2757,7 @@ local function RCBJQOG_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalS
 	
 	end
 end
-local function UVVCGFM_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
+local function RBIWR_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_AFEM"]
@@ -2776,7 +2776,7 @@ local function UVVCGFM_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
 	script.Parent:SetAttribute("fakefile", "{}")
 	_G.AFEM = script.Parent
 end
-local function UPKMDK_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.LocalScript
+local function VXUL_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Load"]
@@ -2807,12 +2807,12 @@ local function UPKMDK_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Loa
 		local emoteData = http:JSONDecode(_G.AFEM:GetAttribute("fakefile"))
 		for _, button in ipairs( _G.AFEM.Thing:GetChildren()) do
 			if button:IsA("TextButton") then
-				button.Text = emoteData[button.Name]
+				button.Text = emoteData[button.Name] and emoteData[button.Name] or "Press and hold to change this slot."
 			end
 		end
 	end)
 end
-local function HUZPA_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save.LocalScript
+local function XNFNSB_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Save1"]
@@ -2841,19 +2841,19 @@ local function HUZPA_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save
 	end)
 end
 
-coroutine.wrap(KIGJO_fake_script)()
-coroutine.wrap(USIHD_fake_script)()
-coroutine.wrap(EPLOTV_fake_script)()
-coroutine.wrap(DRFPSN_fake_script)()
-coroutine.wrap(BLTP_fake_script)()
-coroutine.wrap(XKYIX_fake_script)()
-coroutine.wrap(NNXELVK_fake_script)()
-coroutine.wrap(AWZVOAP_fake_script)()
-coroutine.wrap(QOMU_fake_script)()
-coroutine.wrap(CAYA_fake_script)()
-coroutine.wrap(VWIDI_fake_script)()
-coroutine.wrap(CJMK_fake_script)()
-coroutine.wrap(RCBJQOG_fake_script)()
-coroutine.wrap(UVVCGFM_fake_script)()
-coroutine.wrap(UPKMDK_fake_script)()
-coroutine.wrap(HUZPA_fake_script)()
+coroutine.wrap(KGGSJXM_fake_script)()
+coroutine.wrap(VQJRY_fake_script)()
+coroutine.wrap(GTKHOSI_fake_script)()
+coroutine.wrap(XKLVFUC_fake_script)()
+coroutine.wrap(XIWZT_fake_script)()
+coroutine.wrap(CBHR_fake_script)()
+coroutine.wrap(XWDJK_fake_script)()
+coroutine.wrap(XXAAOIW_fake_script)()
+coroutine.wrap(JSZA_fake_script)()
+coroutine.wrap(YNGOZB_fake_script)()
+coroutine.wrap(PBWTCM_fake_script)()
+coroutine.wrap(SPBAQ_fake_script)()
+coroutine.wrap(FYWNPV_fake_script)()
+coroutine.wrap(RBIWR_fake_script)()
+coroutine.wrap(VXUL_fake_script)()
+coroutine.wrap(XNFNSB_fake_script)()
