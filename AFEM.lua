@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.4.1
+-- AFEM by Imperial, v1.4.2
 
 -- Instances:
 
@@ -1838,7 +1838,7 @@ end
 
 -- Fake Local Scripts:
 
-local function AFSCX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function LEFDW_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1856,19 +1856,19 @@ local function AFSCX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalSc
 	local ts = game:GetService("TweenService")
 	local lplayer = game.Players.LocalPlayer
 	
-	writefile = function()
+	local writefile = function()
 		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
 	end
 	
-	readfile = function()
+	local readfile = function()
 		return _G.AFEM:GetAttribute("fakefile")
 	end
 	
-	isfile = function()
+	local isfile = function()
 		return true
 	end
 	
-	function load()
+	local function load()
 		emoteData = http:JSONDecode(readfile())
 	end
 	
@@ -1919,7 +1919,7 @@ local function AFSCX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalSc
 			}):Play()
 	end)
 end
-local function PVJJPYW_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function XNME_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1940,7 +1940,7 @@ local function PVJJPYW_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Anima
 		}):Play()
 	end)
 end
-local function DXDP_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function OUXEJYX_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1961,7 +1961,7 @@ local function DXDP_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteLis
 		}):Play()
 	end)
 end
-local function DBKDBLM_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function TVATCV_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1982,7 +1982,7 @@ local function DBKDBLM_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIn
 		}):Play()
 	end)
 end
-local function KEACPJZ_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function TCPR_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -2046,7 +2046,7 @@ local function KEACPJZ_fake_script() -- Fake Script: StarterGui.AFEM.AnimationIn
 	startUpdating()
 	
 end
-local function LILK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function NVFRBO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -2067,7 +2067,7 @@ local function LILK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScr
 		end
 	end
 end
-local function GYSFBKW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote1.LocalScript
+local function LXCRNVY_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote1"]
@@ -2084,19 +2084,19 @@ local function GYSFBKW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	local emoteData = {}
 	local emoteSlot = 1
 	local lplayer = game.Players.LocalPlayer
-	writefile = function()
+	local writefile = function()
 		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
 	end
 	
-	readfile = function()
+	local readfile = function()
 		return _G.AFEM:GetAttribute("fakefile")
 	end
 	
-	isfile = function()
+	local isfile = function()
 		return true
 	end
 	
-	function load()
+	local function load()
 		emoteData = http:JSONDecode(readfile())
 	end
 	
@@ -2153,7 +2153,7 @@ local function GYSFBKW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function OGZTIJ_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2.LocalScript
+local function CZBWF_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote2"]
@@ -2240,7 +2240,7 @@ local function OGZTIJ_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote2
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function PCEKB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.LocalScript
+local function TGEANQU_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote3"]
@@ -2259,19 +2259,19 @@ local function PCEKB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.
 	local lplayer = game.Players.LocalPlayer
 	
 	
-	writefile = function()
+	local writefile = function()
 		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
 	end
 	
-	readfile = function()
+	local readfile = function()
 		return _G.AFEM:GetAttribute("fakefile")
 	end
 	
-	isfile = function()
+	local isfile = function()
 		return true
 	end
 	
-	function load()
+	local function load()
 		emoteData = http:JSONDecode(readfile())
 	end
 	
@@ -2326,7 +2326,7 @@ local function PCEKB_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote3.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function BJQDQLK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.LocalScript
+local function KWYFAI_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_emote4"]
@@ -2345,16 +2345,20 @@ local function BJQDQLK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	local lplayer = game.Players.LocalPlayer
 	
 	
-	writefile = function()
+	local writefile = function()
 		_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
 	end
 	
-	readfile = function()
+	local readfile = function()
 		return _G.AFEM:GetAttribute("fakefile")
 	end
 	
-	isfile = function()
+	local isfile = function()
 		return true
+	end
+	
+	local function load()
+		emoteData = http:JSONDecode(readfile())
 	end
 	
 	function load()
@@ -2414,7 +2418,7 @@ local function BJQDQLK_fake_script() -- Fake Script: StarterGui.AFEM.Thing.emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function BHFR_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function IBMYFR_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2448,7 +2452,7 @@ local function BHFR_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame
 		end)
 	end
 end
-local function ULDYI_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function KORE_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2554,7 +2558,7 @@ local function ULDYI_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFram
 		end
 	end)
 end
-local function ZKDAZ_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function SGAGJZ_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2752,7 +2756,7 @@ local function ZKDAZ_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScr
 	
 	end
 end
-local function VXFJBEG_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
+local function TZFY_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_AFEM"]
@@ -2770,7 +2774,7 @@ local function VXFJBEG_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
 	end
 	_G.AFEM = script.Parent
 end
-local function UNAE_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.LocalScript
+local function NTPHBY_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Load"]
@@ -2806,7 +2810,7 @@ local function UNAE_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Load.
 		end
 	end)
 end
-local function FWQDFU_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save.LocalScript
+local function KSORRHV_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Save.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Save1"]
@@ -2835,19 +2839,19 @@ local function FWQDFU_fake_script() -- Fake Script: StarterGui.AFEM.LoadSave.Sav
 	end)
 end
 
-coroutine.wrap(AFSCX_fake_script)()
-coroutine.wrap(PVJJPYW_fake_script)()
-coroutine.wrap(DXDP_fake_script)()
-coroutine.wrap(DBKDBLM_fake_script)()
-coroutine.wrap(KEACPJZ_fake_script)()
-coroutine.wrap(LILK_fake_script)()
-coroutine.wrap(GYSFBKW_fake_script)()
-coroutine.wrap(OGZTIJ_fake_script)()
-coroutine.wrap(PCEKB_fake_script)()
-coroutine.wrap(BJQDQLK_fake_script)()
-coroutine.wrap(BHFR_fake_script)()
-coroutine.wrap(ULDYI_fake_script)()
-coroutine.wrap(ZKDAZ_fake_script)()
-coroutine.wrap(VXFJBEG_fake_script)()
-coroutine.wrap(UNAE_fake_script)()
-coroutine.wrap(FWQDFU_fake_script)()
+coroutine.wrap(LEFDW_fake_script)()
+coroutine.wrap(XNME_fake_script)()
+coroutine.wrap(OUXEJYX_fake_script)()
+coroutine.wrap(TVATCV_fake_script)()
+coroutine.wrap(TCPR_fake_script)()
+coroutine.wrap(NVFRBO_fake_script)()
+coroutine.wrap(LXCRNVY_fake_script)()
+coroutine.wrap(CZBWF_fake_script)()
+coroutine.wrap(TGEANQU_fake_script)()
+coroutine.wrap(KWYFAI_fake_script)()
+coroutine.wrap(IBMYFR_fake_script)()
+coroutine.wrap(KORE_fake_script)()
+coroutine.wrap(SGAGJZ_fake_script)()
+coroutine.wrap(TZFY_fake_script)()
+coroutine.wrap(NTPHBY_fake_script)()
+coroutine.wrap(KSORRHV_fake_script)()
