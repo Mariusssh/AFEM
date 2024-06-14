@@ -1,4 +1,4 @@
--- AFEM by Imperial, v1.2.4
+-- AFEM by Imperial, v1.3.0
 
 -- Instances:
 
@@ -103,6 +103,7 @@ local Converted = {
 	["_Toggle"] = Instance.new("BindableEvent");
 	["_Edit"] = Instance.new("BindableEvent");
 	["_ImageLabel1"] = Instance.new("ImageLabel");
+	["_LocalScript13"] = Instance.new("LocalScript");
 }
 
 -- Properties:
@@ -1742,7 +1743,7 @@ end
 
 -- Fake Local Scripts:
 
-local function GYLXN_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
+local function XCMFEQJ_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -1760,26 +1761,43 @@ local function GYLXN_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalSc
 	local ts = game:GetService("TweenService")
 	local lplayer = game.Players.LocalPlayer
 	
-	script.Parent.Position = UDim2.fromScale(-1, 0.032)
+	writefile = writefile and writefile or nil
+	readfile = readfile and readfile or nil
+	isfile = isfile and isfile or nil
 	
-	script.Parent.Parent.Open.Edit.Event:Connect(function(slot)
-		script.Parent:SetAttribute("editingSlot", slot)
-		script.Parent.TextLabel.Text = "Editing Emote " .. slot
-		--if not writefile or not readfile or not isfile then
-		--	emoteData = {
-		--		emote1 = {
-		--			name = "Godlike",
-		--			id = 10714347256
-		--		}
-		--	}
-		--else
+	function load()
+		if not writefile or not readfile or not isfile then
+	
+			writefile = function(a)
+				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+			end
+	
+			readfile = function(a)
+				return _G.AFEM:GetAttribute("fakefile")
+			end
+	
+			isfile = function()
+				return true
+			end
+			
+			emoteData = http:JSONDecode(readfile())
+		else
 			if isfile("AFMMConf.json") then
 				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
 			else
 				emoteData = {}
 				writefile("AFMMConf.json", "{}")
 			end
-		--end
+		end
+	end
+	
+	
+	script.Parent.Position = UDim2.fromScale(-1, 0.032)
+	
+	script.Parent.Parent.Open.Edit.Event:Connect(function(slot)
+		script.Parent:SetAttribute("editingSlot", slot)
+		script.Parent.TextLabel.Text = "Editing Emote " .. slot
+		load()
 		
 		if emoteData['emote' .. slot] then
 			script.Parent.NameInput.TextBox.Text = emoteData['emote' .. slot]['name']
@@ -1820,7 +1838,7 @@ local function GYLXN_fake_script() -- Fake Script: StarterGui.AFEM.Frame.LocalSc
 			}):Play()
 	end)
 end
-local function RLCF_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
+local function RKBTS_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animationinspection.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Animationinspection"]
@@ -1841,7 +1859,7 @@ local function RLCF_fake_script() -- Fake Script: StarterGui.AFEM.Frame.Animatio
 		}):Play()
 	end)
 end
-local function ZRJKN_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
+local function ZSTVCKQ_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteList.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteList"]
@@ -1862,7 +1880,7 @@ local function ZRJKN_fake_script() -- Fake Script: StarterGui.AFEM.Frame.EmoteLi
 		}):Play()
 	end)
 end
-local function FLWI_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
+local function SMNDXX_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton"]
@@ -1883,7 +1901,7 @@ local function FLWI_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspe
 		}):Play()
 	end)
 end
-local function RZZA_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
+local function BFYGOXO_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspection.Frame.TextLabel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextLabel6"]
@@ -1947,7 +1965,7 @@ local function RZZA_fake_script() -- Fake Script: StarterGui.AFEM.AnimationInspe
 	startUpdating()
 	
 end
-local function VGDMWHN_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
+local function WFBCOMP_fake_script() -- Fake Script: StarterGui.AFEM.Thing.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Thing"]
@@ -1968,7 +1986,7 @@ local function VGDMWHN_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Local
 		end
 	end
 end
-local function POAW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
+local function UVYDWNH_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote1"]
@@ -1985,24 +2003,36 @@ local function POAW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.L
 	local emoteData = {}
 	local emoteSlot = 1
 	local lplayer = game.Players.LocalPlayer
+	writefile = writefile and writefile or nil
+	readfile = readfile and readfile or nil
+	isfile = isfile and isfile or nil
 	
-	--function load()
-	--	if not writefile or not readfile or not isfile then
-	--		emoteData = {
-	--			emote1 = {
-	--				name = "Godlike",
-	--				id = 10714347256
-	--			}
-	--		}
-	--	else
-	if isfile("AFMMConf.json") then
-		emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-	else
-		emoteData = {}
-		writefile("AFMMConf.json", "{}")
+	function load()
+		if not writefile or not readfile or not isfile then
+	
+			writefile = function(a)
+				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+			end
+	
+			readfile = function(a)
+				return _G.AFEM:GetAttribute("fakefile")
+			end
+	
+			isfile = function()
+				return true
+			end
+	
+			emoteData = http:JSONDecode(readfile())
+		else
+			if isfile("AFMMConf.json") then
+				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+			else
+				emoteData = {}
+				writefile("AFMMConf.json", "{}")
+			end
+		end
 	end
-	--end
-	--end
+	
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2011,10 +2041,13 @@ local function POAW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.L
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		load()
+		
 		if not emoteData['emote' .. emoteSlot] then return end
 		local atrack = Instance.new("Animation")
 		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 		local track
+		for _,track in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end
+	
 		local s, r = pcall(function()
 			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
 			track:Play()
@@ -2053,7 +2086,7 @@ local function POAW_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote1.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function OJIL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
+local function IKWOHO_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote2"]
@@ -2071,23 +2104,35 @@ local function OJIL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.L
 	local emoteSlot = 2
 	local lplayer = game.Players.LocalPlayer
 	
-	--function load()
-	--	if not writefile or not readfile or not isfile then
-	--		emoteData = {
-	--			emote1 = {
-	--				name = "Godlike",
-	--				id = 10714347256
-	--			}
-	--		}
-	--	else
-	if isfile("AFMMConf.json") then
-		emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-	else
-		emoteData = {}
-		writefile("AFMMConf.json", "{}")
+	writefile = writefile and writefile or nil
+	readfile = readfile and readfile or nil
+	isfile = isfile and isfile or nil
+	
+	function load()
+		if not writefile or not readfile or not isfile then
+	
+			writefile = function(a)
+				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+			end
+	
+			readfile = function(a)
+				return _G.AFEM:GetAttribute("fakefile")
+			end
+	
+			isfile = function()
+				return true
+			end
+	
+			emoteData = http:JSONDecode(readfile())
+		else
+			if isfile("AFMMConf.json") then
+				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+			else
+				emoteData = {}
+				writefile("AFMMConf.json", "{}")
+			end
+		end
 	end
-	--end
-	--end
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2099,6 +2144,8 @@ local function OJIL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.L
 		local atrack = Instance.new("Animation")
 		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 		local track
+		for _,track in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end
+	
 		local s, r = pcall(function()
 			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
 			track:Play()
@@ -2139,7 +2186,7 @@ local function OJIL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote2.L
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function XDLOL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
+local function UHNDKZA_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote3"]
@@ -2157,23 +2204,36 @@ local function XDLOL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.
 	local emoteSlot = 3
 	local lplayer = game.Players.LocalPlayer
 	
-	--function load()
-	--	if not writefile or not readfile or not isfile then
-	--		emoteData = {
-	--			emote1 = {
-	--				name = "Godlike",
-	--				id = 10714347256
-	--			}
-	--		}
-	--	else
-	if isfile("AFMMConf.json") then
-		emoteData = http:JSONDecode(readfile("AFMMConf.json"))
-	else
-		emoteData = {}
-		writefile("AFMMConf.json", "{}")
+	
+	writefile = writefile and writefile or nil
+	readfile = readfile and readfile or nil
+	isfile = isfile and isfile or nil
+	
+	function load()
+		if not writefile or not readfile or not isfile then
+	
+			writefile = function(a)
+				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+			end
+	
+			readfile = function(a)
+				return _G.AFEM:GetAttribute("fakefile")
+			end
+	
+			isfile = function()
+				return true
+			end
+	
+			emoteData = http:JSONDecode(readfile())
+		else
+			if isfile("AFMMConf.json") then
+				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
+			else
+				emoteData = {}
+				writefile("AFMMConf.json", "{}")
+			end
+		end
 	end
-	--end
-	--end
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2185,6 +2245,8 @@ local function XDLOL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.
 		local atrack = Instance.new("Animation")
 		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 		local track
+		for _,track in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end
+	
 		local s, r = pcall(function()
 			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
 			track:Play()
@@ -2224,7 +2286,7 @@ local function XDLOL_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote3.
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function MZNCKJT_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
+local function TIIJNYY_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote4.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Emote4"]
@@ -2242,23 +2304,36 @@ local function MZNCKJT_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	local emoteSlot = 4
 	local lplayer = game.Players.LocalPlayer
 	
-	--function load()
-	--	if not writefile or not readfile or not isfile then
-	--		emoteData = {
-	--			emote1 = {
-	--				name = "Godlike",
-	--				id = 10714347256
-	--			}
-	--		}
-	--	else
+	
+	writefile = writefile and writefile or nil
+	readfile = readfile and readfile or nil
+	isfile = isfile and isfile or nil
+	
+	function load()
+		if not writefile or not readfile or not isfile then
+	
+			writefile = function(a)
+				_G.AFEM:SetAttribute("fakefile", http:JSONEncode(emoteData))
+			end
+	
+			readfile = function(a)
+				return _G.AFEM:GetAttribute("fakefile")
+			end
+	
+			isfile = function()
+				return true
+			end
+	
+			emoteData = http:JSONDecode(readfile())
+		else
 			if isfile("AFMMConf.json") then
 				emoteData = http:JSONDecode(readfile("AFMMConf.json"))
 			else
 				emoteData = {}
 				writefile("AFMMConf.json", "{}")
 			end
-		--end
-	--end
+		end
+	end
 	
 	if emoteData['emote' .. emoteSlot] then
 		script.Parent.Text = emoteData['emote' .. emoteSlot]['name']
@@ -2270,6 +2345,8 @@ local function MZNCKJT_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 		local atrack = Instance.new("Animation")
 		atrack.AnimationId = "rbxassetid://" .. emoteData['emote' .. emoteSlot]['id']
 		local track
+		for _,track in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do track:Stop() end
+	
 		local s, r = pcall(function()
 			track = lplayer.Character.Humanoid.Animator:LoadAnimation(atrack)
 			track:Play()
@@ -2309,7 +2386,7 @@ local function MZNCKJT_fake_script() -- Fake Script: StarterGui.AFEM.Thing.Emote
 	button.MouseButton1Up:Connect(onButtonReleased)
 	
 end
-local function FMZAYZH_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
+local function KQZJ_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_EmoteListFrame"]
@@ -2343,7 +2420,7 @@ local function FMZAYZH_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFr
 		end)
 	end
 end
-local function WEYIG_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
+local function HJJRL_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFrame.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox2"]
@@ -2449,7 +2526,7 @@ local function WEYIG_fake_script() -- Fake Script: StarterGui.AFEM.EmoteListFram
 		end
 	end)
 end
-local function UYQSVH_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
+local function ANRRG_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Open"]
@@ -2631,17 +2708,36 @@ local function UYQSVH_fake_script() -- Fake Script: StarterGui.AFEM.Open.LocalSc
 	
 	end
 end
+local function CMHTX_fake_script() -- Fake Script: StarterGui.AFEM.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_AFEM"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
 
-coroutine.wrap(GYLXN_fake_script)()
-coroutine.wrap(RLCF_fake_script)()
-coroutine.wrap(ZRJKN_fake_script)()
-coroutine.wrap(FLWI_fake_script)()
-coroutine.wrap(RZZA_fake_script)()
-coroutine.wrap(VGDMWHN_fake_script)()
-coroutine.wrap(POAW_fake_script)()
-coroutine.wrap(OJIL_fake_script)()
-coroutine.wrap(XDLOL_fake_script)()
-coroutine.wrap(MZNCKJT_fake_script)()
-coroutine.wrap(FMZAYZH_fake_script)()
-coroutine.wrap(WEYIG_fake_script)()
-coroutine.wrap(UYQSVH_fake_script)()
+	if not game:IsLoaded() then
+		game.Loaded:Wait()
+	end
+	_G.AFEM = script.Parent
+end
+
+coroutine.wrap(XCMFEQJ_fake_script)()
+coroutine.wrap(RKBTS_fake_script)()
+coroutine.wrap(ZSTVCKQ_fake_script)()
+coroutine.wrap(SMNDXX_fake_script)()
+coroutine.wrap(BFYGOXO_fake_script)()
+coroutine.wrap(WFBCOMP_fake_script)()
+coroutine.wrap(UVYDWNH_fake_script)()
+coroutine.wrap(IKWOHO_fake_script)()
+coroutine.wrap(UHNDKZA_fake_script)()
+coroutine.wrap(TIIJNYY_fake_script)()
+coroutine.wrap(KQZJ_fake_script)()
+coroutine.wrap(HJJRL_fake_script)()
+coroutine.wrap(ANRRG_fake_script)()
+coroutine.wrap(CMHTX_fake_script)()
