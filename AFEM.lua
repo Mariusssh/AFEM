@@ -665,9 +665,6 @@ do -- Fake Module: ServerStorage.AFEM.FUNCTIONS
 			local anim = Instance.new("Animation")
 			anim.AnimationId = id
 			game.Players.LocalPlayer.Character:FindFirstChild("Animate").PlayEmote:Invoke(anim)
-			track.Priority= Enum.AnimationPriority.Action
-			for _, track in pairs(hum:WaitForChild("Animator"):GetPlayingAnimationTracks()) do
-				track:Stop(0)
 			--for _, anim in ipairs(game.Players.LocalPlayer.Character.Humanoid.Animator:GetPlayingAnimationTracks()) do anim:Stop() end
 			--local anim = Instance.new("Animation")
 			--anim.AnimationId = id
